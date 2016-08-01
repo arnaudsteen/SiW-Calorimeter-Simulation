@@ -1,0 +1,12 @@
+/run/initialize
+
+/GunParameter/gunOptionPosition cosmic
+#/GunParameter/randomMaxPosition 250
+
+/GunParameter/gunOptionMomentum cosmic_gaus
+/GunParameter/gaussianMean 0.0
+/GunParameter/gaussianSigma 1.0
+
+/gun/particle mu-
+/gun/energy 10 GeV
+/run/beamOn 10

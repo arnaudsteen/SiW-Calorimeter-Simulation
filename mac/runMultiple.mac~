@@ -1,0 +1,8 @@
+/run/initialize
+
+/MultipleGunParameter/NParticles 2
+/MultipleGunParameter/ParticlesName geantino geantino
+
+/MultipleGunParameter/ParticlesEnergy 10 10 
+
+/run/beamOn 1

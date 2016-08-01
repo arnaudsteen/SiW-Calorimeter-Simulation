@@ -1,0 +1,11 @@
+*.slcio
+*.cc~
+*.txt~
+src/*.cc~
+include/*.hh~
+python/*.py~
+python/src/*.py~
+mac/*.mac~
+build
+bin
+lib

@@ -1,0 +1,16 @@
+/run/initialize
+
+/GunParameter/gunOptionPosition beamtest
+/GunParameter/randomMaxPosition 250
+
+/GunParameter/gunOptionMomentum gaus
+/GunParameter/gaussianMean 0.
+/GunParameter/gaussianSigma 0.2
+/GunParameter/uniformParameter 0.3
+
+/GunParameter/xPositionSigma 5
+/GunParameter/yPositionSigma 5
+
+/gun/particle mu-
+/gun/energy 10 GeV
+/run/beamOn 50
