@@ -57,7 +57,7 @@ void SiWGenericEcalPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
      particle.size() != eta.size() ||
      particle.size() != phi.size() ){
     G4cout << "FATAL ERROR in SiWGenericEcalPrimaryGeneratorAction::SiWGenericEcalPrimaryGeneratorAction() \n \t"
-	   << "check muPjet.py and config.txt \n \t"
+	   << "check config.py and config.txt \n \t"
 	   << "-->> std::abort()" << G4endl;
     std::abort();
   }

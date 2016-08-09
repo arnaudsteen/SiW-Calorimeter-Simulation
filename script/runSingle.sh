@@ -5,11 +5,12 @@ PATH_TO_ILCSOFT="/Users/arnaudsteen/ilcsoft/v01-17-09"
 PATH_TO_SiWSimulation="/Users/arnaudsteen/HGCAL/TestSim"
 #
 
-muonEnergy=$1
-nevent=$2
-seed=$3
+particle=$1
+energy=$2
+nevent=$3
+seed=$4
 
-outputFileName=${muonEnergy}GeVFSRMuon-${nevent}Events-Seed${seed}.slcio
+outputFileName=single_${particle}_${energy}GeV_${nevent}Events_Seed${seed}.slcio
 
 model=QGSP_BERT
 
@@ -55,9 +56,10 @@ EOF
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:.
 
 cp ${PATH_TO_SiWSimulation}/python/src/eventGeneration.py .
-cp ${PATH_TO_SiWSimulation}/python/src/fsr.py config.py
+cp ${PATH_TO_SiWSimulation}/python/src/single.py config.py
 
-sed -i -e "s/muonEnergy=20/muonEnergy=${muonEnergy}/g" config.py
+sed -i -e "s/particleName=e-/particleName=${particle}/g" config.py
+sed -i -e "s/particleEnergy=5.0/particleEnergy=${energy}/g" config.py
 
 echo ""
 echo "******************************"
@@ -73,5 +75,5 @@ rm autorun.mac autogeom.mac eventGeneration.py eventGeneration.pyc config.py con
 #### uncomment the following commands to store result on eos ####
 
 #source /afs/cern.ch/project/eos/installation/user/etc/setup.sh
-#xrdcp -f root://eosuser.cern.ch//eos/user/a/asteen/hgcal/simu/lcio/fsrMuon/simcalorimeterhit/${outputFileName} ${outputFileName}
+#xrdcp -f root://eosuser.cern.ch//eos/user/a/asteen/hgcal/simu/lcio/muonPlusJet/simcalorimeterhit/${outputFileName} ${outputFileName}
 #rm ${outputFileName}
